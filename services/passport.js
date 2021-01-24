@@ -45,6 +45,7 @@ passport.use(
             clientID: keys.facebookClientID,
             clientSecret: keys.facebookClientSecret,
             callbackURL: '/auth/facebook/callback',
+            proxy: true,
         },
         function (accessToken, refreshToken, profile, done) {
             User.findOne({ facebookId: profile.id }).then(existingUser => {
@@ -64,6 +65,7 @@ passport.use(
             clientID: keys.githubClientID,
             clientSecret: keys.githubClientSecret,
             callbackURL: '/auth/github/callback',
+            proxy: true,
         },
         function (accessToken, refreshToken, profile, done) {
             User.findOne({ githubId: profile.id }).then(existingUser => {
