@@ -27,6 +27,15 @@ require('./routes/googleRoute')(app);
 require('./routes/facebookRoute')(app);
 require('./routes/githubRoute')(app);
 
+app.get('/api/logout', (req, res) => {
+    req.logOut();
+    res.send('Sign Out done ^_^');
+});
+
+app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT);
