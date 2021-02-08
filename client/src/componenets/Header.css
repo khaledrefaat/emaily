@@ -1,0 +1,14 @@
+.header__navbar {
+  font-size: 1.6rem;
+}
+
+.header__brand {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header__nav {
+  width: 80%;
+  text-transform: capitalize;
+}
