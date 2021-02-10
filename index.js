@@ -9,15 +9,15 @@ require('./services/passport');
 const app = express();
 
 mongoose.connect(keys.mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 app.use(
-    cookieSession({
-        maxAge: 30 * 24 * 60 * 60 * 1000, //30 days
-        keys: [keys.cookieKey],
-    })
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000, //30 days
+    keys: [keys.cookieKey],
+  })
 );
 
 app.use(passport.initialize());
@@ -28,12 +28,12 @@ require('./routes/facebookRoute')(app);
 require('./routes/githubRoute')(app);
 
 app.get('/api/logout', (req, res) => {
-    req.logOut();
-    res.send('Sign Out done ^_^');
+  req.logOut();
+  res.redirect('/');
 });
 
 app.get('/api/current_user', (req, res) => {
-    res.send(req.user);
+  res.send(req.user);
 });
 
 const PORT = process.env.PORT || 5000;

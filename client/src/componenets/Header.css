@@ -6,6 +6,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
+  color: #fff;
+}
+
+.header__brand:hover {
+  text-decoration: none;
+  color: #ffffffbf;
 }
 
 .header__nav {
