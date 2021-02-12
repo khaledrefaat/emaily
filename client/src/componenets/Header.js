@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Payments from './Payments';
 import './Header.css';
 
 class Header extends Component {
@@ -33,7 +34,7 @@ class Header extends Component {
               <Nav.Link href="/surveys">add credits</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="#">credits: 5</Nav.Link>
+              <Payments />
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/api/logout">logout</Nav.Link>
@@ -44,7 +45,6 @@ class Header extends Component {
   };
 
   render() {
-    console.log(this.props.auth);
     return (
       <>
         <Navbar expand="lg" bg="info" variant="dark" className="header__navbar">
