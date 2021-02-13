@@ -31,7 +31,9 @@ class Header extends Component {
         return (
           <Nav className="ml-auto header__nav" fill>
             <Nav.Item>
-              <Nav.Link href="/surveys">add credits</Nav.Link>
+              <Nav.Link href="/surveys">
+                Credits: {this.props.auth.credits || ''}
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Payments />
