@@ -49,13 +49,21 @@ class Header extends Component {
   render() {
     return (
       <>
-        <Navbar expand="lg" bg="info" variant="dark" className="header__navbar">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          bg="info"
+          variant="dark"
+          className="header__navbar">
           <Link
             to={this.props.auth ? '/surveys' : '/'}
             className="header__brand">
             emaily
           </Link>
-          {this.renderContent()}
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {this.renderContent()}
+          </Navbar.Collapse>
         </Navbar>
       </>
     );

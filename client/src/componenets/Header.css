@@ -15,6 +15,12 @@
 }
 
 .header__nav {
-  width: 80%;
   text-transform: capitalize;
+}
+
+/* 1000px */
+@media only screen and (min-width: 62.5em) {
+  .header__nav {
+    width: 80%;
+  }
 }
